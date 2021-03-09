@@ -1,0 +1,7 @@
+Type: AWS::CloudFormation::Stack
+Properties:
+  Tags:
+    - Project: TCC
+    - Environment: Dev
+  TemplateURL: String
+  TimeoutInMinutes: Integer
