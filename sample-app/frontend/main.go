@@ -28,9 +28,11 @@ func loadPage(title string) (*Page, error) {
 }
 
 func main() {
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
 	http.HandleFunc("/", viewHandler)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 // REFERENCES
 // https://golang.org/doc/articles/wiki/
+// https://github.com/Rosalita/GoViolin
