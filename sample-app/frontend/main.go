@@ -2,37 +2,47 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"text/template"
 )
 
-type Page struct {
+type Data struct {
 	Title string
-	Body  []byte
-}
-
-func viewHandler(w http.ResponseWriter, r *http.Request) {
-	title := r.URL.Path[len("/"):]
-	p, _ := loadPage(title)
-	fmt.Fprintf(w, "<div>%s</div>", p.Body)
-}
-
-func loadPage(title string) (*Page, error) {
-	filepath := title + "/" + title + ".html"
-	body, err := ioutil.ReadFile(filepath)
-	if err != nil {
-		return nil, err
-	}
-	return &Page{Title: title, Body: body}, nil
 }
 
 func main() {
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("css"))))
-	http.HandleFunc("/", viewHandler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("stylesheets"))))
+
+	http.HandleFunc("/", Catalog)
+
+	log.Fatal(http.ListenAndServe(getPort(), nil))
 }
 
+func getPort() string {
+	p := os.Getenv("PORT")
+	if p != "" {
+		return ":" + p
+	}
+	return ":8080"
+}
+
+func Render(w http.ResponseWriter, tmpl string, d Data) {
+	tmpl = fmt.Sprintf("templates/%s", tmpl)
+
+	t, err := template.ParseFiles(tmpl)
+	if err != nil {
+		log.Print("template parsing error: ", err)
+	}
+
+	err = t.Execute(w, d)
+	if err != nil {
+		log.Print("template executing error: ", err)
+	}
+}
+
+// -----------------------------------------
 // REFERENCES
-// https://golang.org/doc/articles/wiki/
 // https://github.com/Rosalita/GoViolin
+// https://golang.org/doc/articles/wiki/
