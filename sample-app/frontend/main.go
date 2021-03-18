@@ -9,11 +9,14 @@ import (
 )
 
 type Data struct {
-	Title string
+	Title  string
+	Player string
+	Score  string
 }
 
 func main() {
 	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("stylesheets"))))
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
 	http.HandleFunc("/", Catalog)
 

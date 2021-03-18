@@ -6,7 +6,9 @@ import (
 
 func Catalog(w http.ResponseWriter, r *http.Request) {
 	d := Data{
-		Title: "Catalog",
+		Title:  "MicroGames",
+		Player: "CaioMarte",
+		Score:  "1000pt",
 	}
 	Render(w, "catalog.html", d)
 }
