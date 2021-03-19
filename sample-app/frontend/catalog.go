@@ -10,5 +10,6 @@ func Catalog(w http.ResponseWriter, r *http.Request) {
 		Player: "CaioMarte",
 		Score:  "1000pt",
 	}
+
 	Render(w, "catalog.html", d)
 }
