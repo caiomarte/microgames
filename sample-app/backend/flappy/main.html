@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/text-encoding@0.7.0/lib/encoding.min.js"></script>
+    <script src="/scripts/pako_inflate.min.js"></script>
+    <script src="/scripts/wasm_exec.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', async () => {
+          const go = new Go();
+          const name = window.location.search.substring(1);
+          let url = `https://storage.googleapis.com/ebiten-dot-org-wasm/${name}.wasm.gz`;
+          if (location.hostname === 'localhost') {
+              const params = new URLSearchParams(window.parent.location.search);
+              if (params.has('wasmurl')) {
+                  url = params.get('wasmurl');
+              }
+          }
+
+          // 'await import' doesn't work on the old Edge browser:
+          //     await import('/scripts/pako_inflate.min.js');
+
+          let wasm = pako.ungzip(await (await fetch(url)).arrayBuffer());
+          // A fetched response might be decompressed twice on Firefox.
+          // See https://bugzilla.mozilla.org/show_bug.cgi?id=610679
+          if (wasm[0] === 0x1f && wasm[1] === 0x8b) {
+              wasm = pako.ungzip(wasm);
+          }
+          const result = await WebAssembly.instantiate(wasm, go.importObject).catch((err) => {
+	      console.error(err);
+          });
+          document.getElementById('loading').remove();
+          go.run(result.instance);
+      });
+    </script>
+    <canvas width="960" height="720" style="width: 100%; height: 100%; margin: 0px; padding: 0px; outline: currentcolor none medium;" tabindex="1"></canvas>
+</body>
+</html>

@@ -14,6 +14,12 @@ type Data struct {
 	Score  string
 }
 
+type Games struct {
+	Flappy string
+	Blocks string
+	G2048  string
+}
+
 func main() {
 	http.Handle("/stylesheets/", http.StripPrefix("/stylesheets/", http.FileServer(http.Dir("stylesheets"))))
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))

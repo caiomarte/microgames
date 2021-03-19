@@ -1,9 +1,18 @@
 header {
     text-align: center;
+    
 }
 
-header {
-    width: 100%;
+section {
+    background-color: black;
+    padding: 2.5%;
+}
+
+footer p {
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: small;
 }
 
 .container {
@@ -12,6 +21,10 @@ header {
 
 .col-sm {
     text-align: center;
+}
+
+.card {
+    margin: 5%;
 }
 
 .nav-link {
@@ -40,6 +53,19 @@ header {
 
 .link-description {
     font-size: 70%;
+}
+
+.play {
+    width: 2rem;
+}
+
+.btn {
+    width: 100%;
+}
+
+.credits {
+    font-size: x-small;
+    margin-top: 3%;
 }
 
 #brand-title {
