@@ -37,7 +37,7 @@ func getPort() string {
 	return ":8080"
 }
 
-func Render(w http.ResponseWriter, tmpl string, d Data) {
+func Render(w http.ResponseWriter, tmpl string, d Data, g Games) {
 	tmpl = fmt.Sprintf("templates/%s", tmpl)
 
 	t, err := template.ParseFiles(tmpl)
