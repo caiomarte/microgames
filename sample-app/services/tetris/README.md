@@ -1,4 +1,4 @@
-# Mario
+# Tetris
 
 Play it here: https://dionyziz.com/graphics/canvas-tetris/
 
