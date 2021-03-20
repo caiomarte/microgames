@@ -1,15 +1,16 @@
-A very simple HTML5 version of Tetris, for educational purposes, made in 45 minutes.
+# Mario
 
-Watch the making-of timelapse:
-http://www.youtube.com/watch?v=GQTZ_TPxJhM
+Play it here: https://dionyziz.com/graphics/canvas-tetris/
 
-Play:
-https://dionyziz.com/graphics/canvas-tetris/
+### Launching
 
-Or you can [play it here](https://plugins.quadnix.com/launch?author=quadnix&id=canvas-tetris),
-powered by [Quadnix Plugins](https://plugins.quadnix.com).
+There are several ways to launch the game. Here is the simplest:
 
-License
+1. go mod init github.com/caiomarte/tcc
+2. go run . 
+4. Open 'localhost:8085' in your browser
+5. Enjoy!
+
 =======
 This version of tetris is MIT licensed:
 
