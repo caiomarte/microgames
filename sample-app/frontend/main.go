@@ -20,6 +20,7 @@ type Games struct {
 	G2048  string
 	Astray string
 	Tetris string
+	Mario string
 }
 
 func main() {
