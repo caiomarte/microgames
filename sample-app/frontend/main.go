@@ -18,6 +18,8 @@ type Games struct {
 	Flappy string
 	Blocks string
 	G2048  string
+	Astray string
+	Tetris string
 }
 
 func main() {
