@@ -16,7 +16,7 @@ func Catalog(w http.ResponseWriter, r *http.Request) {
 		Blocks: "localhost:8082",
 		G2048:  "localhost:8083",
 		Astray:  "localhost:8084",
-		Tetris: "locahost:8085",
+		Chess: "locahost:8085",
 		Mario: "locahost:8086",
 	}
 

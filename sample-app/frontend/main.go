@@ -19,7 +19,7 @@ type Games struct {
 	Blocks string
 	G2048  string
 	Astray string
-	Tetris string
+	Chess string
 	Mario string
 }
 
