@@ -8,7 +8,7 @@ There are several ways to launch the game. Here is the simplest:
 
 1. Clone or download the repository
 2. Navigate to Astray's directory
-3. Start 'python -m SimpleHTTPServer 8084'
+3. Start 'python -m http.server 8084'
 4. Open 'localhost:8084' in your browser
 5. Enjoy!
 
