@@ -8,12 +8,12 @@ Projeto que proporcionará o entendimento das vantagens e desvantagens dos orque
 ## Página inicial do sistema
 ![](img/home.png)
 
-## Tecnologias utilizadas
+## Técnologias utilizadas
 
 * Go
 * HTML, CSS e JS
 
-# Instruções para execução do projeto
+## Instruções para execução do projeto
 
 1. Efetue o download/clonamento do projeto para sua máquina. Executando o seguinte comando abaixo:
 ```
