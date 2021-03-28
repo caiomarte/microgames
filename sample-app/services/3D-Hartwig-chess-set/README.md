@@ -1,12 +1,22 @@
-# Tetris
+# Hartwig Chess 3D
 
-Play it here: https://dionyziz.com/graphics/canvas-tetris/
+Open Source Game desenvolvido pelo autor Julian Garnier, utilizando apenas HTML, CSS e JS com as seguintes bibliotecas: Photon e Chess.js.
 
-### Launching
+A versão oficial do Game está disponível em: https://codepen.io/juliangarnier/full/BsIih
 
-There are several ways to launch the game. Here is the simplest:
+## Página inicial do game
+![](img/Chess-oficial.png)
 
-1. go mod init github.com/caiomarte/tcc
-2. go run . 
-4. Open 'localhost:8085' in your browser
-5. Enjoy!
+## Executando o jogo no projeto
+
+1. Acesse o seguinte caminho dentro da pasta do projeto: `\sample-app\services\sample-app\services\3D-Hartwig-chess-set`. Execute os seguintes comandos abaixo:
+
+```
+go mod init github.com/caiomarte/tcc
+```
+
+```
+go run main.go
+```
+
+2. Ele subirá um servidor no endereço `http://localhost:8085`. Acesse diretamente em seu browser.
