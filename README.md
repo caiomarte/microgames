@@ -8,7 +8,7 @@ Projeto que proporcionará o entendimento das vantagens e desvantagens dos orque
 ## Página inicial do sistema
 ![](img/home.png)
 
-## Técnologias utilizadas
+## Tecnologias utilizadas
 
 * Go
 * HTML, CSS e JS
@@ -20,10 +20,15 @@ Projeto que proporcionará o entendimento das vantagens e desvantagens dos orque
 git clone https://github.com/caiomarte/tcc.git
 ```
 
-2. Uma vez baixado o projeto em sua máquina, possa inicia-lo localmente. Executando os comandos abaixo: 
+2. Uma vez baixado o projeto em sua máquina, possa inicia-lo localmente. Executando o seguinte comando abaixo:
 ```
 go mod init github.com/caiomarte/tcc
 ```
-``` 
-go run . 
+
+3. Em seguida, acesse o seguinte caminho dentro da pasta do projeto: `\sample-app\frontend` . Execute o comando abaixo: 
+
 ```
+go run .
+```
+
+4. Ele subirá um servidor no endereço `http://localhost:8080` . Acesse diretamente em seu browser.
