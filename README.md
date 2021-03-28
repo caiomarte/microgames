@@ -16,8 +16,14 @@ Projeto que proporcionará o entendimento das vantagens e desvantagens dos orque
 # Instruções para execução do projeto
 
 1. Efetue o download/clonamento do projeto para sua máquina. Executando o seguinte comando abaixo:
-`git clone https://github.com/caiomarte/tcc.git`
+```
+git clone https://github.com/caiomarte/tcc.git
+```
 
 2. Uma vez baixado o projeto em sua máquina, possa inicia-lo localmente. Executando os comandos abaixo: 
-`go mod init github.com/caiomarte/tcc`
-` go run . `
+```
+go mod init github.com/caiomarte/tcc
+```
+``` 
+go run . 
+```
